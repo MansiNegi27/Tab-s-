@@ -1,0 +1,20 @@
+{//chrome://extensions
+	"manifest_version":2,
+	"name":"Tab(s)",
+	"description": "All the tabs you pin, can be placed here, instead of being pinned.",
+	"version":"1",
+	"author":"Mansi Negi",
+	"incognito":"spanning",
+	"browser_action": {
+		//"default_icon":"tab.png",
+		"default_title":"Have a good day!" //not adding any pop up because using onClicked
+		//"background_page":"hello.html"//to show a popup whenever you click on app icon inside address bar
+	},
+	 "permissions": ["activeTab","tabs","notifications","storage"], //we need permissions to control the active tab 
+	 //each time user opens a new tab we want it ot be newtab.html
+	 //"optional_permissions": these are for better experience//
+	 "background":{
+	 	"scripts":["background.js"],
+	 	"persistent":false
+	 }
+}

@@ -1,0 +1,70 @@
+.navbar{
+	width:100%;
+	height: 12vh;
+	background-color:darkslategray;
+	color: white;
+
+}
+.head1{
+	padding-top: 15px;
+	padding-left: 20px;
+	font-size: 2.5em;
+	font-weight: normal;
+
+}
+body{
+	background: linear-gradient( #23D5AB, #23A6D5,#E73C7E);
+}
+.url_divs{
+	color:black;
+	text-decoration: none;
+	font-weight:bold;
+	background-color: white;
+	font:red;
+	margin-top:1.5%;
+	margin-left: 3%;
+	padding:1.5%;
+	width:55vw;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+a{
+	color:black;
+	font-size: 1.2em;
+	text-decoration: none;
+	font-weight:bold;
+}
+.url_divs:hover{
+	transform: scale(1.03);
+}
+.delete1{
+	width:70px;
+	height:30px;
+	border-radius: 15px;
+	margin-top: 1%;
+	margin-left: 5%;
+	background-color:red;
+	border-color: red;
+	border-style: solid;
+
+}
+.restore{
+	width:70px;
+	height:30px;
+	border-radius: 15px;
+	margin-top: 1%;
+	background-color:green;
+	border-color: green;
+	border-style: solid;
+}
+.delete1:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.restore:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
