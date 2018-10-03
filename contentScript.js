@@ -17,9 +17,41 @@ window.onload =function()
 	},0);
 
 }
+var icons = document.getElementsByClassName('icon');
 var restore = document.getElementsByClassName('restore');
 var delete1 = document.getElementsByClassName('delete1');
+icons[0].addEventListener("click",handler,false);
 
+function handler(){
+	var arrayOfObjects; 
+	var lengthOfArray;
+	var arrayOfKeys;      
+	chrome.storage.local.get('main_array',function(myobj){ arrayOfObjects = myobj['main_array'];});       
+	chrome.storage.local.get('lengthOfMain_array',function(myobj){ lengthOfArray = myobj['lengthOfMain_array'];});
+	chrome.storage.local.get('keys_of_objects',function(myobj){ arrayOfKeys = myobj['keys_of_objects'];});
+	var text = " ";
+	var nextline= "\r\n";
+	setTimeout(function(){
+		for (let i = 0; i < lengthOfArray; i++)
+		 {
+			text +="(" +(i+1)+ ") " + arrayOfObjects[i][arrayOfKeys[i]] + nextline;
+		}
+	},0);
+setTimeout(function(){
+	console.log(text);
+		function download(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+		element.style.display = 'none';
+		document.body.appendChild(element);
+		element.click();
+		document.body.removeChild(element);
+	}
+	download("list.txt",text);
+},3000);
+	
+}
 setTimeout(function()
 {
 	var length_restore = restore.length;
@@ -65,8 +97,6 @@ function delete1_f(){
 		chrome.storage.local.set({'main_array':arrayOfObjects});
 		chrome.storage.local.set({'keys_of_objects':arrayOfKeys});
 		to_close.remove();
-		 console.log(arrayOfObjects);
-		 console.log(arrayOfKeys);
-	},2000);
+	},1000);
 }
 	
